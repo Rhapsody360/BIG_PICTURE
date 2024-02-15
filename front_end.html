@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat Interface</title>
+</head>
+<body>
+    <div class="container">
+        <!-- HTML code for creating the structure -->
+        <div class="message-header">
+            <img src="OIP.jfif" alt="User Avatar">
+            <span>User Name</span>
+        </div>
+        <div class="chat-box">
+            <div class="message-page">
+                <div class="message-container outgoing">
+                    <img src="user-avatar.png" alt="User Avatar">
+                    <p>Hello, this is a test message.</p>
+                    <time>17:35</time>
+                </div>
+                <div class="message-container incoming">
+                    <img src="OIP.jfif" alt="Assistant Avatar">
+                    <p>Hi, this is a reply from the assistant.</p>
+                    <time>17:36</time>
+                </div>
+            </div>
+            <div class="message-bottom">
+                <input type="text" placeholder="Type a message...">
+                <button>➤</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="input_processing.js"></script>
+</body>
+</html>
