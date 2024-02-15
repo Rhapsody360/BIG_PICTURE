@@ -1,0 +1,11 @@
+problem statements: for the BIG PICTURE
+
+1)create a message UI for web
+
+2)create a way of taking input from the user and feed it to a GPT back end which was trained on therapy data
+
+3)understand the content and respond appropriately to help those who are in need
+
+
+extended scope:
+4)gather and maintain the user inputs in a storage database for later betterment of the model
