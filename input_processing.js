@@ -32,7 +32,7 @@ messageButton.addEventListener("click", function() {
         // Create a new image element for the user avatar
         const messageImage = document.createElement("img");
         // Set the source and alt attributes of the image
-        messageImage.src = "user-avatar.png";
+        messageImage.src = "icons/user-avatar.png";
         messageImage.alt = "User Avatar";
         // Create a new paragraph element for the message text
         const messageParagraph = document.createElement("p");
