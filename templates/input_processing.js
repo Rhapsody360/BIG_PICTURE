@@ -22,6 +22,8 @@ if (event.which == 13) {
 // Add an event listener for the button click
 messageButton.addEventListener("click", function() {
     // Get the value of the input field
+
+    //IMPORTANT: FEED THIS "messageText" into the model 
     const messageText = messageInput.value;
     // Check if the input is not empty
     if (messageText) {
