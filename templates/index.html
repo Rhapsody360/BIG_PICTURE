@@ -153,18 +153,21 @@
     <div class="container">
         <!-- HTML code for creating the structure -->
         <div class="message-header">
-            <img src="icons/OIP.jfif" alt="BOT Avatar">
+            <img src="{{ url_for('static', filename='images/OIP.jfif') }}" alt="BOT Avatar">
+            <!-- <img src="OIP.jfif" alt="BOT Avatar"> -->
             <span>User Name</span>
         </div>
         <div class="chat-box">
             <div class="message-page">
                 <div class="message-container outgoing">
-                    <img src="icons/user-avatar.png" alt="User Avatar">
+                    <!-- <img src="user-avatar.png" alt="User Avatar"> -->
+                    <img src="{{ url_for('static', filename='images/user-avatar.png') }}" alt="User Avatar">
                     <p class = "botText">Hello, this is a test message.</p>
                     <time>17:35</time>
                 </div>
                 <div id = "chatbox" class="message-container incoming">
-                    <img src="icons/OIP.jfif" alt="BOT Avatar">
+                    <!-- <img src="/OIP.jfif" alt="BOT Avatar"> -->
+                    <img src="{{ url_for('static', filename='images/OIP.jfif') }}" alt="BOT Avatar">
                     <p>Hi, this is a reply from the assistant.test successful</p>
                     <time>17:36</time>
                 </div>
@@ -215,7 +218,8 @@
                 // Create a new image element for the user avatar
                 const messageImage = document.createElement("img");
                 // Set the source and alt attributes of the image
-                messageImage.src = "icons/user-avatar.png";
+                messageImage.src = "user-avatar.png";
+                messageImage.src="{{ url_for('static', filename='images/user-avatar.png') }}"
                 messageImage.alt = "User Avatar";
                 // Create a new paragraph element for the message text
                 const messageParagraph = document.createElement("p");
@@ -255,7 +259,8 @@
                 // Create a new image element for the user avatar
                 const messageImage = document.createElement("img");
                 // Set the source and alt attributes of the image
-                messageImage.src = "icons/OIP.jfif";
+                // messageImage.src = "OIP.jfif";
+                messageImage.src="{{ url_for('static', filename='images/OIP.jfif') }}"
                 messageImage.alt = "BOT Avatar";
                 // Create a new paragraph element for the message text
                 const messageParagraph = document.createElement("p");

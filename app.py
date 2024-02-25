@@ -18,6 +18,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
+
 @app.route("/get")
 #function for the bot response
 def get_bot_response():
@@ -28,16 +29,32 @@ def get_bot_response():
     # print("messageText:",messageText)
     # return str(messageText)
     # end temporary
+    start_keyword = """
+    <|im_start|>system
+    You are a very intelligent assistant. Help the user as much as you can.<|im_end|>
+    <|im_start|>user
+    """
+    text_input = start_keyword +messageText+""" <|im_end|>
+    <|im_start|>assistant
+    """
     sequences = pipeline(
-        text_inputs=messageText,
-        max_length=200,
+        text_inputs=text_input,
+        max_length=500,
+        truncation=True,
         do_sample=True,
-        top_k=10,
+        penalty_alpha= 0.5,
+        top_k=2,
+        repetition_penalty= 1.0016,
         num_return_sequences=1,
         eos_token_id=ltokenizer.eos_token_id,
     )
     print("sequencing done")
-    return str(sequences)
+
+    output = str(sequences)
+    intruncont = len(start_keyword) + len(messageText) + 66
+    output = output[intruncont:-13]
+
+    return output
 
 if __name__ == "__main__":
     app.run()
